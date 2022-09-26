@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment.GeneralPage">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="generalPageViewModel"
+            type="com.example.pulse.viewModel.GeneralPageViewModel" />
+    </data>
+
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="15dp"
+            android:gravity="center"
+            android:contentDescription="@string/btnSave"
+            android:textColor="@color/md_white_1000"
+            android:text="7.1 Save"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/txtOnbord"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="25dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtOnbordH6"
+                        style="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/txtOnbordH6" />
+
+                    <TextView
+                        android:id="@+id/txtOnbordB1"
+                        style="@style/TextAppearance.MaterialComponents.Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/txtOnbordB1" />
+                </LinearLayout>
+
+                <HorizontalScrollView
+                    android:id="@+id/scrollGraph"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="25dp"
+                    android:visibility="gone">
+
+                    <view
+                        android:id="@+id/graph"
+                        class="im.dacer.androidcharts.LineView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textDirection="ltr" />
+
+                </HorizontalScrollView>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:id="@+id/txtRecord"
+                        style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:drawableEnd="@drawable/ic_calendar"
+                        android:text=""
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.498"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.shawnlin.numberpicker.NumberPicker
+                        android:id="@+id/nPicker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:width="100dp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toTopOf="@+id/btnScanPulse"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.498"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtRecord"
+                        app:np_dividerColor="@color/md_light_blue_700"
+                        app:np_dividerThickness="1dp"
+                        app:np_max="250"
+                        app:np_min="0"
+                        app:np_textSize="24sp"
+                        app:np_value="60" />
+
+                    <Button
+                        android:id="@+id/btnScanPulse"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/scanThePulse"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintTop_toBottomOf="@+id/nPicker"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="fill"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/txtHealthy"
+                        style="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/md_black_1000"
+                        android:text="@string/healthy" />
+
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupHealthy"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="20dp">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dairy"
+                            android:contentDescription="@string/dairy"
+                            android:textColor="@color/md_black_1000" />
+
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/diet"
+                            android:contentDescription="@string/diet"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/gardening"
+                            android:contentDescription="@string/gardening"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/goodSleep"
+                            android:contentDescription="@string/goodSleep"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/highFiberFood"
+                            android:contentDescription="@string/highFiberFood"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/housework"
+                            android:contentDescription="@string/housework"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/seafood"
+                            android:contentDescription="@string/seafood"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sex"
+                            android:contentDescription="@string/sex"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sport"
+                            android:contentDescription="@string/sport"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/stretching"
+                            android:contentDescription="@string/stretching"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/vegetables"
+                            android:contentDescription="@string/vegetables"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/walking"
+                            android:contentDescription="@string/walking"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/yoga"
+                            android:contentDescription="@string/yoga"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/otherPhysicalActivity"
+                            android:contentDescription="@string/otherPhysicalActivity"
+                            android:textColor="@color/md_black_1000" />
+
+                    </com.google.android.material.chip.ChipGroup>
+
+
+                    <TextView
+                        android:id="@+id/txtUnhealthy"
+                        style="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/md_black_1000"
+                        android:text="@string/txtUnhealthy" />
+
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupUnhealthy"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="20dp">
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/alcohol"
+                            android:contentDescription="@string/alcohol"
+                            android:textColor="@color/md_black_1000" />
+
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fastfood"
+                            android:contentDescription="@string/fastfood"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fruitJuices"
+                            android:contentDescription="@string/fruitJuices"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/irregularEating"
+                            android:contentDescription="@string/irregularEating"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lateDinner"
+                            android:contentDescription="@string/lateDinner"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/longSitting"
+                            android:contentDescription="@string/longSitting"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/noActivity"
+                            android:contentDescription="@string/noActivity"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/pastry"
+                            android:contentDescription="@string/pastry"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/processedFood"
+                            android:contentDescription="@string/processedFood"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/smoking"
+                            android:contentDescription="@string/smoking"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/soda"
+                            android:contentDescription="@string/soda"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/stress"
+                            android:contentDescription="@string/stress"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sugar"
+                            android:contentDescription="@string/sugar"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sweets"
+                            android:contentDescription="@string/sweets"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/otherUnhealthyHabit"
+                            android:contentDescription="@string/otherUnhealthyHabit"
+                            android:textColor="@color/md_black_1000" />
+
+
+                    </com.google.android.material.chip.ChipGroup>
+
+                    <TextView
+                        android:id="@+id/txtSymptoms"
+                        style="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/md_black_1000"
+                        android:text="@string/txtSymptoms" />
+
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupSymptoms"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="20dp">
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/blurryVision"
+                            android:contentDescription="@string/blurryVision"
+                            android:textColor="@color/md_black_1000" />
+
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/confused"
+                            android:contentDescription="@string/confused"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/coordinationProblems"
+                            android:contentDescription="@string/coordinationProblems"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/crankyOrImpatient"
+                            android:contentDescription="@string/crankyOrImpatient"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/decreasedVision"
+                            android:contentDescription="@string/decreasedVision"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dizzy"
+                            android:contentDescription="@string/dizzy"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dryMouth"
+                            android:contentDescription="@string/dryMouth"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/drySkin"
+                            android:contentDescription="@string/drySkin"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/energetic"
+                            android:contentDescription="@string/energetic"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fastHeartbeat"
+                            android:contentDescription="@string/fastHeartbeat"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fatigue"
+                            android:contentDescription="@string/fatigue"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/feelWell"
+                            android:contentDescription="@string/feelWell"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/goodMood"
+                            android:contentDescription="@string/goodMood"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/happy"
+                            android:contentDescription="@string/happy"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/headache"
+                            android:contentDescription="@string/headache"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/healSlowly"
+                            android:contentDescription="@string/healSlowly"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/hunger"
+                            android:contentDescription="@string/hunger"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/itchySkin"
+                            android:contentDescription="@string/itchySkin"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/loseWeightWithoutTrying"
+                            android:contentDescription="@string/loseWeightWithoutTrying"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/nausea"
+                            android:contentDescription="@string/nausea"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/nervous"
+                            android:contentDescription="@string/nervous"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/nightmares"
+                            android:contentDescription="@string/nightmares"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/numbOrTinglingHandsOrFeet"
+                            android:contentDescription="@string/numbOrTinglingHandsOrFeet"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/paleSkin"
+                            android:contentDescription="@string/paleSkin"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/shaky"
+                            android:contentDescription="@string/shaky"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sleepy"
+                            android:contentDescription="@string/sleepy"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sweaty"
+                            android:contentDescription="@string/sweaty"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/thirsty"
+                            android:contentDescription="@string/thirsty"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/urinateALot"
+                            android:contentDescription="@string/urinateALot"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/weak"
+                            android:contentDescription="@string/weak"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/otherSymptoms"
+                            android:contentDescription="@string/otherSymptoms"
+                            android:textColor="@color/md_black_1000" />
+
+                    </com.google.android.material.chip.ChipGroup>
+
+                    <TextView
+                        android:id="@+id/txtCare"
+                        style="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/md_black_1000"
+                        android:text="@string/txtCare" />
+
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupCare"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="20dp">
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/alphaGlucosidaseInhibitors"
+                            android:contentDescription="@string/alphaGlucosidaseInhibitors"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/amylinomimeticDrug"
+                            android:contentDescription="@string/amylinomimeticDrug"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/biguanides"
+                            android:contentDescription="@string/biguanides"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dopamineAgonists"
+                            android:contentDescription="@string/dopamineAgonists"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dPP4Inhibitors"
+                            android:contentDescription="@string/dPP4Inhibitors"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/gLP1ReceptorAgonists"
+                            android:contentDescription="@string/gLP1ReceptorAgonists"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/insulin"
+                            android:contentDescription="@string/insulin"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/meglitinides"
+                            android:contentDescription="@string/meglitinides"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sGLTInhibitors"
+                            android:contentDescription="@string/sGLTInhibitors"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sulfonylureas"
+                            android:contentDescription="@string/sulfonylureas"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/thiazolidinediones"
+                            android:contentDescription="@string/thiazolidinediones"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/otherDrugs"
+                            android:contentDescription="@string/otherDrugs"
+                            android:textColor="@color/md_black_1000" />
+
+                    </com.google.android.material.chip.ChipGroup>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</layout>
