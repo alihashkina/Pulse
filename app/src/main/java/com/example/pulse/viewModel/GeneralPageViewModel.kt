@@ -14,6 +14,7 @@ import androidx.core.view.children
 import androidx.core.view.marginBottom
 import androidx.lifecycle.ViewModel
 import com.example.pulse.R
+import com.example.pulse.adapters.dataClass.Card
 import com.example.pulse.db.MyDBHelper
 import com.example.pulse.fragment.GeneralPage.Companion.arrayDateGraph
 import com.example.pulse.fragment.GeneralPage.Companion.arrayPulseGraph
@@ -29,6 +30,7 @@ import com.example.pulse.fragment.GeneralPage.Companion.chipsUnHealthyCheck
 import com.example.pulse.fragment.GeneralPage.Companion.dateDB
 import com.example.pulse.fragment.GeneralPage.Companion.nPickerValues
 import com.example.pulse.fragment.GeneralPage.Companion.pulseDB
+import com.example.pulse.fragment.Statistics
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
@@ -47,6 +49,7 @@ class GeneralPageViewModel : ViewModel() {
         var day = 0
         var hour = 0
         var minute = 0
+        lateinit var cards: Card
     }
 
     var chipsGroup = ""
@@ -73,7 +76,7 @@ class GeneralPageViewModel : ViewModel() {
 
         while (rs.moveToNext()) {
             dateDB = rs.getString(0)
-            pulseDB = rs.getString(1).toFloat()
+            pulseDB = rs.getString(1).toInt()
             chipsHDB = rs.getString(2).replace(",", " | ")
             chipsUhDB = rs.getString(3).replace(",", " | ")
             chipsSDB = rs.getString(4).replace(",", " | ")
@@ -82,14 +85,16 @@ class GeneralPageViewModel : ViewModel() {
             arrayDateGraph.add(dateDB)
             arrayPulseGraph.add(pulseDB)
 
+            GeneralPageViewModel.cards = Card(dateDB, chipsHDB, chipsUhDB, chipsSDB, chipsCDB, pulseDB.toString())
+            Statistics.adapter.addCard(GeneralPageViewModel.cards)
         }
 
 
         if(dateDB != "") {
             scrollGraph.visibility = View.VISIBLE
             txtOnbord.visibility = View.GONE
-            var pulseLists = ArrayList<ArrayList<Float>>()
-            pulseLists = arrayListOf(arrayPulseGraph as ArrayList<Float>)
+            var pulseLists = ArrayList<ArrayList<Int>>()
+            pulseLists = arrayListOf(arrayPulseGraph as ArrayList<Int>)
             graph.setDrawDotLine(false) //optional
             graph.getResources().getColor(R.color.md_white_1000)
             graph.setShowPopup(LineView.SHOW_POPUPS_All) //optional
@@ -97,7 +102,7 @@ class GeneralPageViewModel : ViewModel() {
             graph.setColorArray(intArrayOf(Color.RED))
             graph.marginBottom
             graph.paddingBottom
-            graph.setFloatDataList(pulseLists)
+            graph.setDataList(pulseLists)
         }
     }
 

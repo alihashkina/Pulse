@@ -17,6 +17,7 @@ import android.widget.TextView
 import android.widget.TimePicker
 import androidx.databinding.DataBindingUtil
 import com.example.pulse.R
+import com.example.pulse.adapters.CardAdapter.Companion.cardList
 import com.example.pulse.databinding.GeneralPageFragmentBinding
 import com.example.pulse.db.MyDBHelper
 import com.example.pulse.preferences.Preferences
@@ -37,9 +38,9 @@ class GeneralPage : Fragment(), DatePickerDialog.OnDateSetListener, TimePickerDi
         var chipsUhDB = ""
         var chipsSDB = ""
         var chipsCDB = ""
-        var pulseDB: Float = 0.0F
+        var pulseDB = 0
         var arrayDateGraph : MutableList<String> = mutableListOf()
-        var arrayPulseGraph : MutableList<Float> = mutableListOf()
+        var arrayPulseGraph : MutableList<Int> = mutableListOf()
         var chipsHealthyCheck = mutableListOf<String>()
         var chipsUnHealthyCheck = mutableListOf<String>()
         var chipsSymptomsCheck = mutableListOf<String>()
@@ -120,7 +121,10 @@ class GeneralPage : Fragment(), DatePickerDialog.OnDateSetListener, TimePickerDi
 
                 MyDBHelper(requireContext()).readableDatabase.insert("USERS", null, cv)
 
-                viewModel.graph(bindingGeneralPage.graph, requireContext(), bindingGeneralPage.scrollGraph, bindingGeneralPage.txtOnbord, requireView())
+            cardList.clear()
+            Statistics.bindingStatistics.recyclerStatistics.adapter!!.notifyDataSetChanged()
+
+            viewModel.graph(bindingGeneralPage.graph, requireContext(), bindingGeneralPage.scrollGraph, bindingGeneralPage.txtOnbord, requireView())
 
                 bindingGeneralPage.scrollGraph.post {
                     bindingGeneralPage.scrollGraph.fullScroll(View.FOCUS_RIGHT)

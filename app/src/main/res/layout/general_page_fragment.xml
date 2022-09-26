@@ -31,7 +31,7 @@
             android:gravity="center"
             android:contentDescription="@string/btnSave"
             android:textColor="@color/md_white_1000"
-            android:text="7.1 Save"/>
+            android:text="60 Save"/>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -99,7 +99,7 @@
 
                     <TextView
                         android:id="@+id/txtRecord"
-                        style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+                        style="@style/TextAppearance.MaterialComponents.Headline6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -113,13 +113,13 @@
                     <com.shawnlin.numberpicker.NumberPicker
                         android:id="@+id/nPicker"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="200dp"
                         android:layout_marginTop="20dp"
                         android:width="100dp"
                         android:orientation="vertical"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.498"
+                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/txtRecord"
                         app:np_dividerColor="@color/md_light_blue_700"

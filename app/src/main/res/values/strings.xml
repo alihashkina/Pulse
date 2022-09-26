@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Pulse</string>
+    <string name="app_name">Heart Rate | Cardio Tracker</string>
     <string name="txtOnbordH6">How to use this application</string>
     <string name="txtOnbordB1">Set your current blood pressure and press save button. You also can change the date and set exact tags about your activity, food and health. \n\nWe are happy to help you track your blood pressure and stay healthy</string>
     <string name="record">Record</string>
@@ -95,4 +95,6 @@
     <string name="btnMinus">The sugar level is reduced</string>
     <string name="btnPlus">The sugar level is increased</string>
     <string name="btnSave">Data saved</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

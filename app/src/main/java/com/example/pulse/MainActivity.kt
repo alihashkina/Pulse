@@ -8,6 +8,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityCompat
 import com.example.pulse.fragment.GeneralPage
+import com.example.pulse.fragment.TabFragment
 
 class MainActivity : AppCompatActivity() {
     companion object{
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .add(R.id.containerView, GeneralPage.newInstance())
+                .add(R.id.containerView, TabFragment.newInstance())
                 .addToBackStack(null)
                 .commit()
         }

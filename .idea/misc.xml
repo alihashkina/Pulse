@@ -4,9 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Marina/AndroidStudioProjects/Pulse/app/src/main/res/drawable/ic_back_btnsh.xml" value="0.10092592592592593" />
+        <entry key="..\:/Users/Marina/AndroidStudioProjects/Pulse/app/src/main/res/drawable/ic_product_pulse.xml" value="0.11574074074074074" />
         <entry key="..\:/Users/Marina/AndroidStudioProjects/Pulse/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Marina/AndroidStudioProjects/Pulse/app/src/main/res/layout/card_statistics.xml" value="0.22" />
         <entry key="..\:/Users/Marina/AndroidStudioProjects/Pulse/app/src/main/res/layout/fragment_tab.xml" value="0.1" />
         <entry key="..\:/Users/Marina/AndroidStudioProjects/Pulse/app/src/main/res/layout/general_page_fragment.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/Marina/AndroidStudioProjects/Pulse/app/src/main/res/layout/statistics_fragment.xml" value="0.1" />
       </map>
     </option>
   </component>
