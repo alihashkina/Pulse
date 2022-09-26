@@ -176,8 +176,7 @@
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/dairy"
-                            android:contentDescription="@string/dairy"
+                            android:text="@string/breathingExercises"
                             android:textColor="@color/md_black_1000" />
 
 
@@ -185,8 +184,21 @@
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:text="@string/cardioWorkout"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dairy"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="@string/diet"
-                            android:contentDescription="@string/diet"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -194,7 +206,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/gardening"
-                            android:contentDescription="@string/gardening"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -202,7 +213,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/goodSleep"
-                            android:contentDescription="@string/goodSleep"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -210,7 +220,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/highFiberFood"
-                            android:contentDescription="@string/highFiberFood"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -218,7 +227,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/housework"
-                            android:contentDescription="@string/housework"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lowSaltDiet"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -226,7 +241,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/seafood"
-                            android:contentDescription="@string/seafood"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -234,7 +248,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/sex"
-                            android:contentDescription="@string/sex"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -242,7 +255,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/sport"
-                            android:contentDescription="@string/sport"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -250,7 +262,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/stretching"
-                            android:contentDescription="@string/stretching"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -258,7 +269,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/vegetables"
-                            android:contentDescription="@string/vegetables"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -266,7 +276,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/walking"
-                            android:contentDescription="@string/walking"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -274,7 +283,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/yoga"
-                            android:contentDescription="@string/yoga"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -282,7 +290,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/otherPhysicalActivity"
-                            android:contentDescription="@string/otherPhysicalActivity"
                             android:textColor="@color/md_black_1000" />
 
                     </com.google.android.material.chip.ChipGroup>
@@ -310,24 +317,35 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/alcohol"
-                            android:contentDescription="@string/alcohol"
                             android:textColor="@color/md_black_1000" />
 
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/coffee"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/energeticDrinks"
+                            android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/fastfood"
-                            android:contentDescription="@string/fastfood"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/fruitJuices"
-                            android:contentDescription="@string/fruitJuices"
+                            android:text="@string/fatFood"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -335,7 +353,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/irregularEating"
-                            android:contentDescription="@string/irregularEating"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/irregularSports"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -343,7 +367,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/lateDinner"
-                            android:contentDescription="@string/lateDinner"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -351,7 +374,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/longSitting"
-                            android:contentDescription="@string/longSitting"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -359,7 +381,20 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/noActivity"
-                            android:contentDescription="@string/noActivity"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/overeating"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/overpressure"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -367,7 +402,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/pastry"
-                            android:contentDescription="@string/pastry"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -375,7 +409,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/processedFood"
-                            android:contentDescription="@string/processedFood"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/salt"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -383,7 +423,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/smoking"
-                            android:contentDescription="@string/smoking"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -391,7 +430,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/soda"
-                            android:contentDescription="@string/soda"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -399,7 +437,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/stress"
-                            android:contentDescription="@string/stress"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -407,7 +444,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/sugar"
-                            android:contentDescription="@string/sugar"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -415,15 +451,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/sweets"
-                            android:contentDescription="@string/sweets"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/otherUnhealthyHabit"
-                            android:contentDescription="@string/otherUnhealthyHabit"
+                            android:text="@string/salt"
                             android:textColor="@color/md_black_1000" />
 
 
@@ -450,25 +484,15 @@
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/blurryVision"
-                            android:contentDescription="@string/blurryVision"
-                            android:textColor="@color/md_black_1000" />
-
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
                             android:text="@string/confused"
-                            android:contentDescription="@string/confused"
                             android:textColor="@color/md_black_1000" />
+
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/coordinationProblems"
-                            android:contentDescription="@string/coordinationProblems"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -476,7 +500,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/crankyOrImpatient"
-                            android:contentDescription="@string/crankyOrImpatient"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -484,7 +507,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/decreasedVision"
-                            android:contentDescription="@string/decreasedVision"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -492,7 +514,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/dizzy"
-                            android:contentDescription="@string/dizzy"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -500,7 +521,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/dryMouth"
-                            android:contentDescription="@string/dryMouth"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -508,7 +528,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/drySkin"
-                            android:contentDescription="@string/drySkin"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dyspnea"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -516,7 +542,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/energetic"
-                            android:contentDescription="@string/energetic"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -524,7 +549,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/fastHeartbeat"
-                            android:contentDescription="@string/fastHeartbeat"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -532,7 +556,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/fatigue"
-                            android:contentDescription="@string/fatigue"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -540,7 +563,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/feelWell"
-                            android:contentDescription="@string/feelWell"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -548,7 +570,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/goodMood"
-                            android:contentDescription="@string/goodMood"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -556,7 +577,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/happy"
-                            android:contentDescription="@string/happy"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -564,7 +584,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/headache"
-                            android:contentDescription="@string/headache"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -572,7 +591,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/healSlowly"
-                            android:contentDescription="@string/healSlowly"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -580,7 +598,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/hunger"
-                            android:contentDescription="@string/hunger"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -588,7 +605,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/itchySkin"
-                            android:contentDescription="@string/itchySkin"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -596,7 +612,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/loseWeightWithoutTrying"
-                            android:contentDescription="@string/loseWeightWithoutTrying"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -604,7 +619,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/nausea"
-                            android:contentDescription="@string/nausea"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -612,7 +626,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/nervous"
-                            android:contentDescription="@string/nervous"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -620,7 +633,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/nightmares"
-                            android:contentDescription="@string/nightmares"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -628,7 +640,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/numbOrTinglingHandsOrFeet"
-                            android:contentDescription="@string/numbOrTinglingHandsOrFeet"
+                            android:textColor="@color/md_black_1000" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/painInChest"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -636,7 +654,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/paleSkin"
-                            android:contentDescription="@string/paleSkin"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -644,7 +661,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/shaky"
-                            android:contentDescription="@string/shaky"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -652,7 +668,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/sleepy"
-                            android:contentDescription="@string/sleepy"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -660,7 +675,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/sweaty"
-                            android:contentDescription="@string/sweaty"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -668,7 +682,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/thirsty"
-                            android:contentDescription="@string/thirsty"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -676,7 +689,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/urinateALot"
-                            android:contentDescription="@string/urinateALot"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -684,7 +696,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/weak"
-                            android:contentDescription="@string/weak"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -692,7 +703,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/otherSymptoms"
-                            android:contentDescription="@string/otherSymptoms"
                             android:textColor="@color/md_black_1000" />
 
                     </com.google.android.material.chip.ChipGroup>
@@ -718,88 +728,77 @@
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/alphaGlucosidaseInhibitors"
-                            android:contentDescription="@string/alphaGlucosidaseInhibitors"
+                            android:text="@string/aceInhibitors"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/amylinomimeticDrug"
-                            android:contentDescription="@string/amylinomimeticDrug"
+                            android:text="@string/alphaBlockers"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/biguanides"
-                            android:contentDescription="@string/biguanides"
+                            android:text="@string/alpha2ReceptorAgonists"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/dopamineAgonists"
-                            android:contentDescription="@string/dopamineAgonists"
+                            android:text="@string/angiotensin2ReceptorBlockers"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/dPP4Inhibitors"
-                            android:contentDescription="@string/dPP4Inhibitors"
+                            android:text="@string/betaBlockers"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/gLP1ReceptorAgonists"
-                            android:contentDescription="@string/gLP1ReceptorAgonists"
+                            android:text="@string/calciumChannelBlockers"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/insulin"
-                            android:contentDescription="@string/insulin"
+                            android:text="@string/centralAgonists"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/meglitinides"
-                            android:contentDescription="@string/meglitinides"
+                            android:text="@string/combinedAlphaAndBetablockers"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/sGLTInhibitors"
-                            android:contentDescription="@string/sGLTInhibitors"
+                            android:text="@string/diuretics"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/sulfonylureas"
-                            android:contentDescription="@string/sulfonylureas"
+                            android:text="@string/peripheralAdrenergicInhibitors"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/thiazolidinediones"
-                            android:contentDescription="@string/thiazolidinediones"
+                            android:text="@string/vasodilators"
                             android:textColor="@color/md_black_1000" />
 
                         <com.google.android.material.chip.Chip
@@ -807,7 +806,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/otherDrugs"
-                            android:contentDescription="@string/otherDrugs"
                             android:textColor="@color/md_black_1000" />
 
                     </com.google.android.material.chip.ChipGroup>
