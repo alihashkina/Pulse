@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pulse.R
 import com.example.pulse.adapters.CardAdapter
 import com.example.pulse.databinding.StatisticsFragmentBinding
@@ -17,12 +17,11 @@ class Statistics : Fragment() {
 
     companion object {
         fun newInstance() = Statistics()
-        lateinit var bindingStatistics: StatisticsFragmentBinding
         val adapter = CardAdapter()
-        lateinit var viewModelSt: StatisticsViewModel
     }
 
-
+    lateinit var viewModelSt: StatisticsViewModel
+    lateinit var bindingStatistics: StatisticsFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,8 +35,9 @@ class Statistics : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModelSt = ViewModelProvider(this).get(StatisticsViewModel::class.java)
 
+        //заполнение статистики
         bindingStatistics.apply {
-            recyclerStatistics.layoutManager = GridLayoutManager(context, 1)
+            recyclerStatistics.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, true)
             recyclerStatistics.adapter = adapter
         }
     }

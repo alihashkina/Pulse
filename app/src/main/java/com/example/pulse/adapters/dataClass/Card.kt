@@ -6,5 +6,7 @@ data class Card (
     val cardUnhealthy: String?,
     val cardSymptoms: String?,
     val cardCare: String?,
-    val cardPulse: String?
+    val cardPulse: Int?,
+    val cardOther: String?,
+    var id: Int
 )

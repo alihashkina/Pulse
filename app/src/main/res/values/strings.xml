@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Heart Rate | Cardio Tracker</string>
     <string name="txtOnbordH6">How to use this application</string>
-    <string name="txtOnbordB1">Set your current blood pressure and press save button. You also can change the date and set exact tags about your activity, food and health. \n\nWe are happy to help you track your blood pressure and stay healthy</string>
+    <string name="txtOnbordB1">Set your current heart rate and press save button.\n\nAlso you can change the date and set exact tags about your activity, food and health. You can check all this data and correlation with your heart condition at statistics tab.\n\nWe are happy to help you track your cardio activity and stay healthy</string>
     <string name="record">Record</string>
     <string name="save">Save</string>
     <string name="healthy">Healthy</string>
@@ -92,9 +92,12 @@
     <string name="otherDrugs">Other drugs</string>
     <string name="statistics">Statistics</string>
     <string name="scanThePulse">Scan the pulse</string>
-    <string name="btnMinus">The sugar level is reduced</string>
-    <string name="btnPlus">The sugar level is increased</string>
     <string name="btnSave">Data saved</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pulse">Pulse</string>
+    <string name="date">Date</string>
+    <string name="txtOtherTags">Other tags</string>
+    <string name="share">Share</string>
+    <string name="delete">Delete</string>
+    <string name="btnOtherTags">Add</string>
+    <string name="editTxtOtherTags">Enter an additional tag</string>
 </resources>

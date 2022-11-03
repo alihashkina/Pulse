@@ -97,9 +97,15 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp">
 
+                    <Button
+                        android:id="@+id/deleteCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"/>
+
                     <TextView
                         android:id="@+id/txtRecord"
-                        style="@style/TextAppearance.MaterialComponents.Headline6"
+                        style="@style/TextAppearance.MdcTypographyStyles.Headline5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -127,7 +133,7 @@
                         app:np_max="250"
                         app:np_min="0"
                         app:np_textSize="24sp"
-                        app:np_value="60" />
+                        app:np_value="0" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -797,6 +803,45 @@
                             android:textColor="@color/md_black_1000" />
 
                     </com.google.android.material.chip.ChipGroup>
+
+                    <TextView
+                        android:id="@+id/txtOtherTags"
+                        style="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/txtOtherTags"
+                        android:textColor="@color/md_black_1000" />
+
+                    <EditText
+                        android:id="@+id/editTxtOtherTags"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:inputType="textPersonName"
+                        android:hint="@string/editTxtOtherTags"
+                        android:text="" />
+
+                    <Button
+                        android:id="@+id/btnOtherTags"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="@string/btnOtherTags" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupOtherTags"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="20dp">
+
+                    </com.google.android.material.chip.ChipGroup>
+
 
                 </LinearLayout>
 
