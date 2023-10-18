@@ -101,4 +101,7 @@
     <string name="delete">Удалить</string>
     <string name="btnOtherTags">Добавить</string>
     <string name="editTxtOtherTags">Введите дополнительный тег</string>
+    <string name="toastSave">Сохранено</string>
+    <string name="toastDelete">Запись удалена</string>
+    <string name="stsOnbord">Записей пока нет</string>
 </resources>

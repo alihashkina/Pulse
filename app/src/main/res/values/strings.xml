@@ -100,4 +100,7 @@
     <string name="delete">Delete</string>
     <string name="btnOtherTags">Add</string>
     <string name="editTxtOtherTags">Enter an additional tag</string>
+    <string name="toastSave">Saved</string>
+    <string name="toastDelete">The entry was deleted</string>
+    <string name="stsOnbord">There are no records yet</string>
 </resources>

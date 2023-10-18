@@ -23,7 +23,6 @@ class CardAdapter: RecyclerView.Adapter<CardAdapter.CardHolder>() {
         var idDB = 0
     }
 
-    lateinit var context: Context
     val cardList = ArrayList<Card>()
 
     class CardHolder(item: View): RecyclerView.ViewHolder(item){
@@ -33,12 +32,12 @@ class CardAdapter: RecyclerView.Adapter<CardAdapter.CardHolder>() {
         @SuppressLint("NotifyDataSetChanged")
         fun bind(card: Card, index: Int) = with(binding){
             cardDate.text = card.cardDate
-            cardHealthy.text = card.cardHealthy
-            cardUnhealthy.text = card.cardUnhealthy
-            cardSymptoms.text = card.cardSymptoms
-            cardCare.text = card.cardCare
+            cardHealthy.text = card.cardHealthy?.replace("[", "")?.replace("]", "")
+            cardUnhealthy.text = card.cardUnhealthy?.replace("[", "")?.replace("]", "")
+            cardSymptoms.text = card.cardSymptoms?.replace("[", "")?.replace("]", "")
+            cardCare.text = card.cardCare?.replace("[", "")?.replace("]", "")
             cardPulse.text = card.cardPulse.toString()
-            cardOther.text = card.cardOther
+            cardOther.text = card.cardOther?.replace("[", "")?.replace("]", "")
             id = card.id
 
             //кнопка поделиться/удалить
@@ -67,7 +66,7 @@ class CardAdapter: RecyclerView.Adapter<CardAdapter.CardHolder>() {
                         R.id.delete ->
                         {
                             idDB = card.id
-                            Statistics.adapter.deleteCard()
+                            Statistics.adapter.deleteCard(it.context)
                             Statistics.adapter.updateDelete(index)
                         }
                     }
@@ -99,13 +98,13 @@ class CardAdapter: RecyclerView.Adapter<CardAdapter.CardHolder>() {
     }
 
     //удалить карочку
-    fun deleteCard(){
+    fun deleteCard(context: Context){
         deleteCard = true
         if(cardList.size == 1){
-            GeneralPageViewModel().deleteAllDB()
+            GeneralPageViewModel().deleteAllDB(context)
         }
         else{
-            GeneralPageViewModel().deleteCardDB()
+            GeneralPageViewModel().deleteCardDB(context)
         }
     }
 

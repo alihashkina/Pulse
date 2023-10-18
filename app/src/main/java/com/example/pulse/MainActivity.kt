@@ -14,8 +14,6 @@ import com.example.pulse.fragment.TabFragment
 class MainActivity : AppCompatActivity() {
 
     companion object{
-        var tabRecord : String? = null
-        var tabStatistcs : String? = null
         lateinit var helper: MyDBHelper
     }
 
@@ -41,8 +39,6 @@ class MainActivity : AppCompatActivity() {
                 .addToBackStack(null)
                 .commit()
         }
-        tabRecord = this.getString(R.string.record)
-        tabStatistcs = this.getString(R.string.statistics)
 
         verifyStoragePermissions(this)
     }
